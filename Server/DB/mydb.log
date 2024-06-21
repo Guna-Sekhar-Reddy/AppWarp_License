@@ -1,0 +1,16 @@
+/*C1*/SET SCHEMA SYSTEM_LOBS
+INSERT INTO BLOCKS VALUES(0,2147483647,0)
+COMMIT
+/*C2*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C3*/SET SCHEMA PUBLIC
+CREATE TABLE service(AppKey varchar(20),Secret varchar(20),Name varchar(20),PRIMARY KEY (AppKey))
+CREATE TABLE metering(AppKey varchar(20),sent int,received int,name varchar(35))
+CREATE TABLE room(AppKey varchar(20),id varchar(20),maxPlayers int,name varchar(20),properties varchar(500),PRIMARY KEY (AppKey,id))
+DISCONNECT
+/*C4*/SET SCHEMA PUBLIC
+INSERT INTO SERVICE VALUES('ab','ab','ab')
+COMMIT
+DISCONNECT
+/*C5*/SET SCHEMA PUBLIC
+DISCONNECT
